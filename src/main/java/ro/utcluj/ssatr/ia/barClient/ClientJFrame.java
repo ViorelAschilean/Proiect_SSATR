@@ -43,6 +43,7 @@ import javax.swing.table.AbstractTableModel;
 
 import java.util.concurrent.TimeUnit;
 
+
 public class ClientJFrame extends javax.swing.JFrame {
 
     String globalString = "this is global";
@@ -66,7 +67,6 @@ public class ClientJFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         tProdus = new javax.swing.JTextField();
-        refreshButon = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         tTotal = new javax.swing.JTextField();
         tPret = new javax.swing.JTextField();
@@ -80,21 +80,15 @@ public class ClientJFrame extends javax.swing.JFrame {
         table = new javax.swing.JTable();
         jComboBox1 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         tProdus.setText("Produs");
         tProdus.setName(""); // NOI18N
 
-        refreshButon.setText("Refresh");
-        refreshButon.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshButonActionPerformed(evt);
-            }
-        });
-
         jLabel1.setText("Produs");
+
+        tTotal.setEditable(false);
 
         tPret.setText("123");
 
@@ -160,13 +154,6 @@ public class ClientJFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("jButton2");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -206,10 +193,7 @@ public class ClientJFrame extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(addButon)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(refreshButon, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(delButon, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jButton2))
+                            .addComponent(delButon))
                         .addGap(0, 22, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -231,11 +215,7 @@ public class ClientJFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(delButon)
-                        .addGap(18, 18, 18)
-                        .addComponent(refreshButon)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2))
+                        .addComponent(delButon))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -266,11 +246,11 @@ public class ClientJFrame extends javax.swing.JFrame {
 
     }
 
+
+
     
     public void initTable(){
-      table.getSelectionModel().addListSelectionListener( new RowColumnListSelectionListener());
-      
-        
+        table.getSelectionModel().addListSelectionListener( new RowColumnListSelectionListener());
         this.setTitle("Table Example");
         table.getColumnModel().getColumn(0).setPreferredWidth(150);
         table.getColumnModel().getColumn(1).setPreferredWidth(60);
@@ -281,6 +261,15 @@ public class ClientJFrame extends javax.swing.JFrame {
         table.getColumnModel().getColumn(3).setMinWidth(0);
         table.getColumnModel().getColumn(3).setMaxWidth(0); 
         table.setRowSelectionAllowed(true);
+        
+        
+
+        jComboBox1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent event) {
+                deTrimis("4");
+            }
+        });
+        
     } 
 
     public void StringToTextBox(String total)
@@ -351,10 +340,6 @@ public class ClientJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(null);
     }
 
-    private void refreshButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButonActionPerformed
-        deTrimis("4");
-    }//GEN-LAST:event_refreshButonActionPerformed
-
     private void addButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButonActionPerformed
          deTrimis("1");
     }//GEN-LAST:event_addButonActionPerformed
@@ -370,12 +355,6 @@ public class ClientJFrame extends javax.swing.JFrame {
         JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if(input == 0) deTrimis("3");
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-String prod=tProdus.getText();
-if(tProdus.getText().trim().equals("")  ) System.out.println(" GOOLLLLLL");
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
     
     
     public static void main(String args[]) {
@@ -424,7 +403,6 @@ if(tProdus.getText().trim().equals("")  ) System.out.println(" GOOLLLLLL");
     private javax.swing.JButton addButon;
     private javax.swing.JButton delButon;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
@@ -432,7 +410,6 @@ if(tProdus.getText().trim().equals("")  ) System.out.println(" GOOLLLLLL");
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JButton refreshButon;
     private javax.swing.JTextField tPret;
     private javax.swing.JTextField tProdus;
     private javax.swing.JTextField tTotal;

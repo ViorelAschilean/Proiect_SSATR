@@ -1,13 +1,12 @@
 ro\utcluj\ssatr\ia\barServer\AccessEntity.class
 ro\utcluj\ssatr\ia\barClient\ClientJFrame$4.class
-ro\utcluj\ssatr\ia\barServer\ProiectBarService.class
-ro\utcluj\ssatr\ia\barClient\ClientJFrame$7.class
-ro\utcluj\ssatr\ia\barServer\ServerNetConnector.class
-ro\utcluj\ssatr\ia\barClient\ClientJFrame$3.class
 ro\utcluj\ssatr\ia\barClient\ClientJFrame$2.class
+ro\utcluj\ssatr\ia\barServer\ProiectBarService.class
 ro\utcluj\ssatr\ia\barClient\ClientJFrame$6.class
 ro\utcluj\ssatr\ia\barClient\ClientJFrame$RowColumnListSelectionListener.class
 ro\utcluj\ssatr\ia\barServer\DBAccess.class
 ro\utcluj\ssatr\ia\barClient\ClientJFrame$1.class
 ro\utcluj\ssatr\ia\barClient\ClientJFrame.class
 ro\utcluj\ssatr\ia\barClient\ClientJFrame$5.class
+ro\utcluj\ssatr\ia\barServer\ServerNetConnector.class
+ro\utcluj\ssatr\ia\barClient\ClientJFrame$3.class
